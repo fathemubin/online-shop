@@ -13,6 +13,7 @@
    
    ">
 	<context:component-scan base-package="com.bjit.onlineshop.controller"></context:component-scan>
+	<context:component-scan base-package="com.bjit.shopbackend.dao"></context:component-scan>
 
 	<bean id="viewResolver" 
 	class="org.springframework.web.servlet.view.InternalResourceViewResolver">

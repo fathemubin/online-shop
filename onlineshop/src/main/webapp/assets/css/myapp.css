@@ -53,3 +53,23 @@ body {
     padding: 9px;
     color: #333;
 }
+
+footer{
+	margin:0;
+}
+
+
+.wrapper {
+	min-height:100%;
+	position: relative;
+}
+
+
+.content{
+	padding-bottom:60px;
+}
+.footer{
+	position: absolute;
+	bottom:15px;
+	height:60px;
+}

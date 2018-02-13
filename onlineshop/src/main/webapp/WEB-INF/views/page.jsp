@@ -11,59 +11,75 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <title>Lingerie Shop - ${title} </title>
-    
-    <!-- Custom styles for this template -->
-    <link href="${css}/myapp.css" rel="stylesheet">
+<title>Lingerie Shop - ${title}</title>
 
-    <!-- Bootstrap core CSS -->
-   
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    
-    <link href="${css}/bootstrap.min.css" rel="stylesheet">
-    
-    <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
+<script>
+	window.menu = '${title}';
+</script>
 
-    
-    
+<!-- Custom styles for this template -->
+<link href="${css}/myapp.css" rel="stylesheet">
 
-  </head>
+<!-- Bootstrap core CSS -->
 
-  <body>
+<link
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+	rel="stylesheet">
 
-    <!-- Navigation bar is here -->
-   <%@ include file="./shared/navbar.jsp" %>
+<link href="${css}/bootstrap.min.css" rel="stylesheet">
 
-    <!-- User clicks home -->
-    
-    <c:if test="${userClickHome == true}">
-   <%@ include file="home.jsp" %>
-   </c:if>
-   
-   <!-- User clicks About -->
-   <c:if test="${userClickAbout == true}">
-   <%@ include file="about.jsp" %>
-   </c:if>
-   <!-- User clicks Contact -->
-   <c:if test="${userClickContact == true}">
-   <%@ include file="contact.jsp" %>
-   </c:if>
-   
-    <!-- Footer is here-->
-    <%@ include file="./shared/footer.jsp" %>
+<link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="${js}/jquery.min.js"></script>
-    <script src="${js}/bootstrap.bundle.min.js"></script>
 
-  </body>
+
+
+</head>
+
+<body>
+
+	<div class="wrapper">
+
+		<!-- Navigation bar is here -->
+		<%@ include file="./shared/navbar.jsp"%>
+
+		<!-- User clicks home -->
+        <div class="content">
+		<c:if test="${userClickHome == true}">
+			<%@ include file="home.jsp"%>
+		</c:if>
+
+		<!-- User clicks About -->
+		<c:if test="${userClickAbout == true}">
+			<%@ include file="about.jsp"%>
+		</c:if>
+		<!-- User clicks Contact -->
+		<c:if test="${userClickContact == true}">
+			<%@ include file="contact.jsp"%>
+		</c:if>
+		
+		<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
+			<%@ include file="listProducts.jsp"%>
+		</c:if>
+        </div>
+		<!-- Footer is here-->n
+		<%@ include file="./shared/footer.jsp"%>
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="${js}/jquery.min.js"></script>
+		<script src="${js}/bootstrap.bundle.min.js"></script>
+		<script src="${js}/myapp.js"></script>
+
+	</div>
+
+</body>
 
 </html>
 
